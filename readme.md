@@ -3,15 +3,22 @@
 
 ***Attribute***
 Là những thông tin về đặc điểm đối tượng 
+
 ***Methods*** 
 Là những hành vi mà đối tượng thực hiện
 
 *Example:* 
+
 **Điện thoại**
+
 *Atribute* : Màu sắc, kích thước, bộ nhớ,...
+
 *Methods* : Nghe, gọi, chụp ảnh, nhắn tin,...
+
 **Con người** :
+
 *Atribute* : Tên, tuổi, địa chỉ,..
+
 *Methods* : Đi , đứng, làm việc, ăn, ngủ,...
 
 ***Class***
@@ -30,9 +37,12 @@ class Student {
 ### 4 đặc tính cơ bản của OOP
 ##### **1. Tính đóng gói** 
 Tính đóng gói cho phép che giấu thông tin và những tính chất xử lý bên trong của đối tượng
-Public : Các đối tượng bên ngoài có thể gọi hàm và biến trong class, hỗ trợ sự kế thừa.
-Private:  Các đối tượng bên ngoài không thể gọi được biến và hàm trong class, hỗ trợ sự kế thừa.
-Protected: Không cho các đối tượng bên ngoài gọi biến và hàm trong class, không hỗ trợ kế thừa.
+
+* ***Public*** :  những phương thức hoặc biến với kiểu dữ liệu này sẽ được truy xuất và sử dụng ở đâu cũng được.
+
+* ***Private***:  những phương thức hoặc biến với kiểu dữ liệu này sẽ được truy xuất và sử dụng trong nội bộ của Class nơi mà phương thức hoặc biến đó được khai báo.
+
+* ***Protected***: những phương thức hoặc biến với kiểu dữ liệu này ngoài việc sử dụng trong nội bộ Class, chúng còn có thể được truy xuất ở Class con kế thừa Class khai báo hàm hoặc phương thức đó.
 
 ```java
 public class Car {
