@@ -81,6 +81,7 @@ class Player {
             System.out.println(card);
         }
     }
+    
     int getTotalPoint() {
         int totalPoint = 0;
         for (Card card : hand) {
