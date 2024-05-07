@@ -16,6 +16,25 @@ package OOPJava.Exercise3;
         this.giaBan = giaBan;
         this.mauXe = mauXe;
     }
+    public String getId() {
+        return id;
+    }
 
+    public String getHangSanXuat() {
+        return hangSanXuat;
+    }
+
+    public String getMauXe() {
+        return mauXe;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + id +
+                ", Hãng sản xuất: " + hangSanXuat +
+                ", Năm sản xuất: " + namSanXuat +
+                ", Giá bán: " + giaBan +
+                ", Màu xe: " + mauXe;
+    }
    
 }

@@ -9,5 +9,9 @@ class XeMay extends PhuongTien {
         super(id, hangSanXuat, namSanXuat, giaBan, mauXe);
         this.congXuat = congXuat;
     }
-
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", Công suất: " + congXuat;
+    }
 }

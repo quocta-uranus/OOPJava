@@ -11,5 +11,9 @@ class XeTai extends PhuongTien {
         this.trongTai = trongTai;
     }
 
- 
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", Trọng tải: " + trongTai;
+    }
 }

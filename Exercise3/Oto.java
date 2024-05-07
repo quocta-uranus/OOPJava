@@ -11,4 +11,10 @@ class Oto extends PhuongTien {
         this.soChoNgoi = soChoNgoi;
         this.kieuDongCo = kieuDongCo;
     }
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", Số chỗ ngồi: " + soChoNgoi +
+                ", Kiểu động cơ: " + kieuDongCo;
+    }
 }
