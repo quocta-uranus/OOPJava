@@ -18,6 +18,29 @@ public abstract class Student {
         this.universityName = universityName;
         this.gradeLevel = gradeLevel;
     }
+    String getFullName() {
+        return fullName;
+    }
+
+    String getDoB() {
+        return doB;
+    }
+
+    String getSex() {
+        return sex;
+    }
+
+    String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    String getUniversityName() {
+        return universityName;
+    }
+
+    String getGradeLevel() {
+        return gradeLevel;
+    }
 
     public abstract void showMyInfo();
 }

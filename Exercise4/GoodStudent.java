@@ -9,7 +9,10 @@ public class GoodStudent extends Student {
         this.gpa = gpa;
         this.bestRewardName = bestRewardName;
     }
-
+    double getGpa() {
+        
+        return gpa;
+    }
     @Override
     public void showMyInfo() {
         System.out.println("Good Student Information:");

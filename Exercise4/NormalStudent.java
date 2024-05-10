@@ -9,6 +9,13 @@ public class NormalStudent extends Student {
         this.englishScore = englishScore;
         this.entryTestScore = entryTestScore;
     }
+    public int getEnglishScore() {
+        return englishScore;
+    }
+
+    public int getEntryTestScore() {
+        return entryTestScore;
+    }
 
     @Override
     public void showMyInfo() {

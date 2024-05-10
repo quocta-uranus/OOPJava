@@ -85,36 +85,64 @@ public class main {
             }
         }
 
-        Collections.sort(students, new Comparator<Student>() {
-            @Override
-            public int compare(Student s1, Student s2) {
-                int fullNameComparison = s2.fullName.compareTo(s1.fullName);
-                if (fullNameComparison != 0) {
-                    return fullNameComparison;
-                } else {
-                    return s1.phoneNumber.compareTo(s2.phoneNumber);
-                }
-            }
-        });
-
-        for (Student student : students) {
-            student.showMyInfo();
-            System.out.println("-----------------------");
-        }
+        selectCandidates(students);
+        displaySelectedCandidates(students);
 
         scanner.close();
     }
 
+    private static void selectCandidates(ArrayList<Student> students) {
    
+        ArrayList<GoodStudent> goodStudents = new ArrayList<>();
+        ArrayList<NormalStudent> normalStudents = new ArrayList<>();
+
+        for (Student student : students) {
+            if (student instanceof GoodStudent) {
+                goodStudents.add((GoodStudent) student);
+            } else if (student instanceof NormalStudent) {
+                normalStudents.add((NormalStudent) student);
+            }
+        }
+
+  
+        Collections.sort(goodStudents, Comparator.comparingDouble(GoodStudent::getGpa).reversed());
+        int vacancies = Math.min(goodStudents.size(), 15);
+        for (int i = 0; i < vacancies; i++) {
+            
+        }
+
+        int remainingVacancies = 15 - vacancies;
+        if (remainingVacancies > 0) {
+       
+            Collections.sort(normalStudents, Comparator.comparingInt(NormalStudent::getEntryTestScore).reversed()
+                                                    .thenComparingInt(NormalStudent::getEnglishScore));
+            for (int i = 0; i < remainingVacancies; i++) {
+               
+            }
+        }
+    }
+
+    private static void displaySelectedCandidates(ArrayList<Student> students) {
+       
+        Collections.sort(students, Comparator.comparing(Student::getFullName).reversed()
+                                                .thenComparing(Student::getPhoneNumber));
+        System.out.println("******************************");
+
+        System.out.println("Selected Candidates:");
+        for (Student student : students) {
+            System.out.println("Full Name: " + student.getFullName());
+            System.out.println("Phone Number: " + student.getPhoneNumber());
+            System.out.println("-----------------------");
+        }
+    }
+
     private static boolean isValidFullName(String fullName) {
         return fullName.length() >= 10 && fullName.length() <= 50;
     }
 
-    
     private static boolean isValidDOB(String doB) {
         return doB.matches("\\d{2}/\\d{2}/\\d{4}");
     }
-
 
     private static boolean isValidPhoneNumber(String phoneNumber) {
         return phoneNumber.matches("(090|098|091|031|035|038)\\d{7}");
