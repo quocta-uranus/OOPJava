@@ -9,17 +9,17 @@ public class Student {
     private int admissionYear;
     private double entranceExamScore;
     private ArrayList<AcademicResult> academicResults;
-
+    private int type;
    
 
-    public Student(String studentID, String fullName, String dateOfBirth, int admissionYear, double entranceExamScore) {
+    public Student(String studentID, String fullName, String dateOfBirth, int admissionYear, double entranceExamScore,int type) {
         this.studentID = studentID;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.admissionYear = admissionYear;
         this.entranceExamScore = entranceExamScore;
         this.academicResults = new ArrayList<>();
-        
+        this.type = type;
 
       
 
@@ -39,6 +39,13 @@ public class Student {
      public String getfullName() {
         return fullName;
     }
+
+
+    public int getType() {
+        return this.type;
+    }
+
+
     public void addAcademicResult(AcademicResult result) {
         academicResults.add(result);
     }

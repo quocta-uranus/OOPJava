@@ -1,6 +1,7 @@
 package OOPJava.Exercise5;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Department {
     private String departmentName;
@@ -14,7 +15,29 @@ public class Department {
     public void addStudent(Student student) {
         students.add(student);
     }
+    public int getTotalRegularStudents() {
+        int countRegularStudents = 0;
+        for (Student student : students) {
+            if (student instanceof Student && student.getType() == 1) {
+                countRegularStudents++;
+            }
+        }
+        return countRegularStudents;
+    }
+    public List<PartTimeStudent> getAffiliatedPartTimeStudents(String trainingLocation) {
+        List<PartTimeStudent> affiliatedPartTimeStudents = new ArrayList<>();
+        for (Student student : students) {
+            if (student instanceof PartTimeStudent) {
+                PartTimeStudent partTimeStudent = (PartTimeStudent) student;
+                String trainingLocationLowerCase = trainingLocation.toLowerCase();
 
+                if (partTimeStudent.getTrainingLocation().toLowerCase().equals(trainingLocationLowerCase)) {
+                    affiliatedPartTimeStudents.add(partTimeStudent);
+                }
+            }
+        }
+        return affiliatedPartTimeStudents;
+    }
     public void showStudentsInfo() {
         System.out.println("Thông tin và điểm của sinh viên trong khoa " + departmentName + ":");
         for (Student student : students) {
